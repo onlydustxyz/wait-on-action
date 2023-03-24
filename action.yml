@@ -28,25 +28,25 @@ inputs:
   delay:
     description: Initial delay before checking for resources in ms, default 0
     required: false
-    default: 0
+    default: "0"
   httpTimeout:
     description: |
       Maximum time in ms to wait for an HTTP HEAD/GET request, default 0
       which results in using the OS default
     required: false
-    default: 0
+    default: "0"
   interval:
     description: Interval to poll resources in ms, default 250ms
     required: false
-    default: 250
+    default: "250"
   log:
     description: Log resources begin waited on and when complete or errored
     required: false
-    default: false
+    default: "false"
   reverse:
     description: Reverse operation, wait for resources to NOT be available
     required: false
-    default: false
+    default: "false"
   simultaneous:
     description: |
       Simultaneous / Concurrent connections to a resource, default Infinity
@@ -59,11 +59,11 @@ inputs:
   tcpTimeout:
     description: Maximum time in ms for tcp connect, default 300ms
     required: false
-    default: 300
+    default: "300"
   verbose:
     description: Enable debug output to stdout
     required: false
-    default: false
+    default: "false"
   window:
     description: |
       Stability window, the time in ms defining the window of time that
@@ -72,7 +72,7 @@ inputs:
       reset to the value of interval. This is only used for files, other
       resources are considered available on first detection.
     required: false
-    default: 750
+    default: "750"
 runs:
-  using: node12
+  using: node16
   main: dist/index.js
